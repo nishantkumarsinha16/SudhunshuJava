@@ -1,0 +1,34 @@
+xpath example
+
+//span[@class='mdc-button__label' and text()='Ok, Got it']
+//span[contains(text(),'Input')]'
+//input[contains(@class,'mat')]
+//input[@placeholder='Ex. Pizza']
+(//span[@class='mdc-list-item__end ng-star-inserted'])[4]
+//a[@aria-label='Angular Material']/..
+
+
+XPath Axis Family Tree Analogy
+The major XPath axes follow family tree terminology:
+
+self:: is you.
+
+Downward:
+child:: are your immediate children.
+descendant:: are your children, and their children, recursively.
+descendant-or-self:: (aka //): are you and your descendants.
+
+Upward:
+preceding ::
+parent :: is your mother or father.1
+ancestor :: are your parent, and your parent's parent, recursively.
+ancestor-or-self:: are you and your ancestors.
+Sideways (consider elements earlier in the document to be younger):
+
+previous-sibling:: are your younger siblings, in age order.
+following-sibling:: are your older siblings, in age order.
+previous:: are your younger siblings and their descendants, in age order.
+following:: are your older siblings and their descendants, in age order.
+
+Svg Icon
+//*[contains(@value,'Test')]//following::*[local-name()='svg' and contains(@class,'context-menu-icon')]

@@ -2,6 +2,8 @@ package com.nishant;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.browser.util.Browser;
@@ -10,15 +12,22 @@ public class FBLoginTest {
 
 	WebDriver driver;
 
+	@BeforeTest
+	public void befor() {
+		Browser browser = new Browser();
+		driver = browser.openBrowser("zyz");
+		
+		System.out.println("befor Test");
+	}
+
 	@Test
 	public void loginFacebookPage() {
-		Browser b = new Browser();
-		driver = b.openChromeDriver();
-		driver.findElement(By.id("email")).sendKeys("nishant Sinha");
-		driver.findElement(By.id("pass")).sendKeys("123344");
-		driver.findElement(By.name("login")).click();
-		driver.close();
 
+	}
+	
+	@AfterTest
+	public void after() {
+		driver.close();
 	}
 
 }
